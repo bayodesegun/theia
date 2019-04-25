@@ -118,7 +118,7 @@ export class FileNavigatorContribution extends AbstractViewContribution<FileNavi
     }
 
     async initializeLayout(app: FrontendApplication): Promise<void> {
-        await this.openView();
+        await this.openView({ activate: true, reveal: true });
     }
 
     registerCommands(registry: CommandRegistry): void {
