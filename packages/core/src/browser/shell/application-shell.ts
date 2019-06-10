@@ -1463,13 +1463,13 @@ export namespace ApplicationShell {
             emptySize: 140,
             expandThreshold: 140,
             expandDuration: 0,
-            initialSizeRatio: 0.191
+            initialSizeRatio: 0.291
         }),
         rightPanel: Object.freeze(<SidePanel.Options>{
             emptySize: 140,
             expandThreshold: 140,
             expandDuration: 0,
-            initialSizeRatio: 0.191
+            initialSizeRatio: 0.291
         })
     });
 
