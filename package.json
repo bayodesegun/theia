@@ -51,15 +51,12 @@
     "build": "run build",
     "build:clean": "run prepare",
     "docs": "rimraf gh-pages/docs/next && typedoc --tsconfig configs/typedoc-tsconfig.json --options configs/typedoc.json",
-    "test": "yarn test:theia && yarn test:electron && yarn test:browser",
-    "test:theia": "run test \"@theia/!(example-)*\" --stream --concurrency=1",
-    "test:browser": "yarn rebuild:browser && run test \"@theia/example-browser\"",
-    "test:electron": "yarn rebuild:electron && run test \"@theia/example-electron\"",
+    "test": "yarn test:theia && yarn test:browser",
+    "test:theia": "run test \"@theia/!(tc-)*\" --stream --concurrency=1",
+    "test:browser": "yarn rebuild:browser && run test \"@theia/tc-ide\"",
     "rebuild:clean": "rimraf .browser_modules",
     "rebuild:browser": "theia rebuild:browser",
-    "rebuild:electron": "theia rebuild:electron",
-    "rebuild:electron:debug": "DEBUG=electron-rebuild && yarn rebuild:electron",
-    "watch": "lerna run watch --scope \"@theia/!(example-)*\" --parallel",
+    "watch": "lerna run watch --scope \"@theia/!(tc-)*\" --parallel",
     "publish": "yarn && yarn test && yarn publish:latest",
     "publish:latest": "lerna publish && yarn publish:check",
     "publish:next": "yarn next:publish && yarn next:publish --skip-npm && yarn publish:check",
@@ -69,6 +66,6 @@
   "workspaces": [
     "dev-packages/*",
     "packages/*",
-    "examples/*"
+    "apps/*"
   ]
 }
